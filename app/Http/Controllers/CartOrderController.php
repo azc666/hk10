@@ -16,6 +16,7 @@ use App\Classes\LayoutHelpersClass;
 // use Manipulations;
 use Spatie\Browsershot\Browsershot;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Gloudemans\Shoppingcart\Facades\Cart;
 
 class CartOrderController extends Controller
@@ -168,8 +169,14 @@ class CartOrderController extends Controller
 
             $cartOrder .= '<td class="table-image">';
             $cartOrderToEmail = $cartOrder;
-            $cartOrder .= '<a href="' . url(substr_replace($item->options->proofPath, 'pdf', -3)) . '" target="_blank"><img src="' . url($item->options->proofPath) . '"width=200px" alt="proof"'; $cartOrder .= ($prod_layout == 'NTAG' ? 'class="img-responsive cart-image move-right">' : 'class="img-responsive cart-image move-right  dropshadow">');
-            $cartOrder .= '</a>';
+
+            if ($prod_layout == 'NTAG') {
+                $cartOrder .= '<a href="' . url(substr_replace($item->options->proofPath, 'pdf', -3)) . '" target="_blank"><img src="' . url($item->options->proofPath) . '"width=200px" alt="proof" class="img-responsive move-right"></a>';
+            } else {
+                $cartOrder .= '<a href="' . url(substr_replace($item->options->proofPath, 'pdf', -3)) . '" target="_blank"><img src="' . url($item->options->proofPath) . '"width=200px" alt="proof" class="img-responsive move-right dropshadow"></a>';
+            }
+
+            // $cartOrder .= '<a href="' . url(substr_replace($item->options->proofPath, 'pdf', -3)) . '" target="_blank"><img src="' . url($item->options->proofPath) . '"width=200px" alt="proof" class="img-responsive cart-image move-right dropshadow"></a>';
             $cartOrder .= '</td>';
             $cartOrderToEmail .= '</td>';
 
@@ -344,7 +351,23 @@ class CartOrderController extends Controller
             <tr><td>Order_Type_o </td><td>' . strip_tags($item_prod->name) . '</tr>';
 
             $bcfyi_qty = $item_prod->qty;
-            // if ($prod_layout == 'SBCFYI' || $prod_layout == 'ABCFYI' || $prod_layout == 'PBCFYI') {
+                // if ($prod_layout == 'SBCFYI' || $prod_layout == 'ABCFYI' || $prod_layout == 'PBCFYI') {
+
+            if (strpos($item_prod->name, 'NTAG')) {
+                switch ($item_prod->qty) {
+                    case '1':
+                        $bcfyi_qty = '1 Name Tag';
+                        break;
+                    case '2':
+                        $bcfyi_qty = '2 Name Tags';
+                        break;
+                    case '3':
+                        $bcfyi_qty = '3 Name Tags';
+                        break;
+                    default:
+                        $bcfyi_qty = '1 Name Tag';
+                }
+            }
             if (strpos($item_prod->name, 'BC + FYI Pads')) {
                 switch ($item_prod->qty) {
                     case '24': $bcfyi_qty = '250 BCs + 4 FYI Pads'; break;
@@ -446,7 +469,7 @@ class CartOrderController extends Controller
 
         \Mail::to(Auth::user()->email)->send(new OrderConfirmEmail($cartOrderEmail));
 
-        if (Auth::user()->username == 'HK34' || Auth::user()->username == 'HK35' || Auth::user()->username == 'HK46' || $prod_layout == 'PDSBC' || $prod_layout == 'ADSBC') {
+        if (Auth::user()->username == 'HK34' || Auth::user()->username == 'HK35' || Auth::user()->username == 'HK46' || $prod_layout == 'PDSBC' || $prod_layout =='ADSBC' || $prod_layout == 'NTAG') {
             \Mail::to('sheri.testa@hklaw.com')->send(new OrderConfirmEmail($cartOrderEmail));
             // \Mail::to('azc666@gmail.com')->send(new OrderConfirmEmail($cartOrderEmail));
         }
