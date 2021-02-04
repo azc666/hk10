@@ -168,7 +168,8 @@ class CartOrderController extends Controller
 
             $cartOrder .= '<td class="table-image">';
             $cartOrderToEmail = $cartOrder;
-            $cartOrder .= '<a href="' . url(substr_replace($item->options->proofPath, 'pdf', -3)) . '" target="_blank"><img src="' . url($item->options->proofPath) . '"width=200px" alt="proof" class="img-responsive cart-image move-right dropshadow"></a>';
+            $cartOrder .= '<a href="' . url(substr_replace($item->options->proofPath, 'pdf', -3)) . '" target="_blank"><img src="' . url($item->options->proofPath) . '"width=200px" alt="proof"'; $cartOrder .= ($prod_layout == 'NTAG' ? 'class="img-responsive cart-image move-right">' : 'class="img-responsive cart-image move-right  dropshadow">');
+            $cartOrder .= '</a>';
             $cartOrder .= '</td>';
             $cartOrderToEmail .= '</td>';
 
