@@ -246,7 +246,7 @@ Order Checkout
                         <br>
                             Allow 1-2 weeks for engraved Partner Cards.
                         <br>
-                            Metal name badges are ordered and shipped on quarterly basis.
+                            Metal name badges are ordered and shipped on a quarterly basis.
                         </strong>
                         </p>
                         <form action="{{ route('cartorder') }}" method="POST">
