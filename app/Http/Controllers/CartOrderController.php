@@ -118,7 +118,7 @@ class CartOrderController extends Controller
 
                     $cartOrder .= $address_s;
 
-                    $cartOrder .= '<p><small>Most orders ship within 2-3 working days. </small><br><strong>Double Sided Business Cards will automatically be sent for approval before production.<br>Allow 1-2 weeks for engraved Partner Cards.<br>Allow 7-10 business days, plus transit time, for Name Tags.</strong></p>';
+                    $cartOrder .= '<p><small>Most orders ship within 2-3 working days. </small><br><strong>Double Sided Business Cards will automatically be sent for approval before production.<br>Allow 1-2 weeks for engraved Partner Cards.<br>Metal name badges are ordered and shipped on quarterly basis from our vendor.</strong></p>';
 
                     $cartOrder .= '<p class="move-down"></p>
                 </div>
@@ -469,9 +469,14 @@ class CartOrderController extends Controller
 
         \Mail::to(Auth::user()->email)->send(new OrderConfirmEmail($cartOrderEmail));
 
-        if (Auth::user()->username == 'HK34' || Auth::user()->username == 'HK35' || Auth::user()->username == 'HK46' || $prod_layout == 'PDSBC' || $prod_layout =='ADSBC' || $prod_layout == 'NTAG') {
+        if (Auth::user()->username == 'HK34' || Auth::user()->username == 'HK35' || Auth::user()->username == 'HK46' || $prod_layout == 'PDSBC' || $prod_layout =='ADSBC') {
             \Mail::to('sheri.testa@hklaw.com')->send(new OrderConfirmEmail($cartOrderEmail));
             // \Mail::to('azc666@gmail.com')->send(new OrderConfirmEmail($cartOrderEmail));
+        }
+        if ($prod_layout == 'NTAG') {
+            \Mail::to('sheri.testa@hklaw.com')->send(new OrderConfirmEmail($cartOrderEmail));
+            // \Mail::to('Sonia.tsunis@hklaw.com')->send(new OrderConfirmEmail($cartOrderEmail));
+            // \Mail::to('Sarah.caramanica@hklaw.com')->send(new OrderConfirmEmail($cartOrderEmail));
         }
 
         // \Mail::to('output@g-d.com')->send(new OrderProductionEmail($cartOrderProduction, $order));

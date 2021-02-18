@@ -93,8 +93,7 @@
               <div class="caption">
                 <h3> {!! $product->prod_name !!} </h3>
                 @if ($product->id == 112)
-                    <h5><i><strong>Important!</strong></i><br>After proof approval, we will proceed with the production of your order.<br>
-                    Please be aware that Name Tags will take approximately 7-10 business days to manufacture, not including transit time.</h5>
+                    <p><i><strong>Please Note:</strong></i><br>Metal name badges are ordered and shipped on a quarterly basis from our vendor. Please contact Sonia Tsunis <a href="mailto://sonia.tsunis@hklaw.com">(sonia.tsunis@hklaw.com)</a> with any questions.</p>
                 @endif
                 <p class="description text-muted">{!! nl2br($product->description) !!}</p>
                 <br>
