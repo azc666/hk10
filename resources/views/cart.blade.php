@@ -96,7 +96,7 @@
                         {!! Form::open(['route' => ['cart', 'method' => 'PATCH']]) !!}
 
                         @if ($prod_layout == 'NTAG')
-                        {!! Form::select('qty', array('Select Quantity', '1' => '1 Name Tag', '2' => '2 Name Tags', '3' => '3 Name Tags',), ['class' => 'quantity move-down'],
+                        {!! Form::select('qty', array('Select Quantity', '1' => '1 Name Badge', '2' => '2 Name Badges', '3' => '3 Name Badges',), ['class' => 'quantity move-down'],
                         ['style' => 'font-size:12px']) !!}
                         @endif
 
@@ -119,9 +119,9 @@
 
                             if ($prod_layout == 'NTAG') {
                                 switch ($item->qty) {
-                                    case '1': $bcfyi_qty = '1 Name Tag'; break;
-                                    case '2': $bcfyi_qty = '2 Name Tags'; break;
-                                    case '3': $bcfyi_qty = '3 Name Tags'; break;
+                                    case '1': $bcfyi_qty = '1 Name Badge'; break;
+                                    case '2': $bcfyi_qty = '2 Name Badges'; break;
+                                    case '3': $bcfyi_qty = '3 Name Badges'; break;
                                     default: $bcfyi_qty = '1 FYI Pad';
                             }
                             }

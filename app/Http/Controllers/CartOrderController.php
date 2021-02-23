@@ -223,16 +223,16 @@ class CartOrderController extends Controller
             if ($prod_layout == 'NTAG') {
                 switch ($item->qty) {
                     case '1':
-                        $bcfyi_qty = '1 Name Tag';
+                        $bcfyi_qty = '1 Name Badge';
                         break;
                     case '2':
-                        $bcfyi_qty = '2 Name Tags';
+                        $bcfyi_qty = '2 Name Badges';
                         break;
                     case '3':
-                        $bcfyi_qty = '3 Name Tags';
+                        $bcfyi_qty = '3 Name Badges';
                         break;
                     default:
-                        $bcfyi_qty = '1 Name Tag';
+                        $bcfyi_qty = '1 Name Badge';
                 }
             }
             if ($prod_layout == 'SBCFYI' || $prod_layout == 'ABCFYI' || $prod_layout == 'PBCFYI') {
@@ -356,16 +356,16 @@ class CartOrderController extends Controller
             if (strpos($item_prod->name, 'NTAG')) {
                 switch ($item_prod->qty) {
                     case '1':
-                        $bcfyi_qty = '1 Name Tag';
+                        $bcfyi_qty = '1 Name Badge';
                         break;
                     case '2':
-                        $bcfyi_qty = '2 Name Tags';
+                        $bcfyi_qty = '2 Name Badges';
                         break;
                     case '3':
-                        $bcfyi_qty = '3 Name Tags';
+                        $bcfyi_qty = '3 Name Badges';
                         break;
                     default:
-                        $bcfyi_qty = '1 Name Tag';
+                        $bcfyi_qty = '1 Name Badge';
                 }
             }
             if (strpos($item_prod->name, 'BC + FYI Pads')) {

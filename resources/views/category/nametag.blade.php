@@ -9,7 +9,7 @@ Nametag
 {{-- <br> --}}
 <div class="container">
     <div class="row">
-        <h2 class="pull-left move-up"> Select a Name Tag </h2>
+        <h2 class="pull-left move-up"> Select a Name Badge </h2>
         <a href="{{ url("/") }}" class="btn btn-primary pull-right" role="button">Return to Select a Category Page</a>
     </div>
 
@@ -21,12 +21,12 @@ Nametag
                 <img src="assets/nametag/ntag.jpg" class="img-responsive" alt="Name Tags">
 
                 <div class="caption">
-                    <h3> Name Tags </h3><br>
+                    <h3> Name Badges </h3><br>
 
                     <p class="description text-muted">{!! nl2br($product[11]->description) !!}</p>
                     <p>
                         <a href="{!! url("/categories/15") !!}" class="btn btn-primary btn-block" role="button"> Select
-                            Name Tags </a>
+                            Name Badges </a>
                     </p>
                 </div>
             </div>

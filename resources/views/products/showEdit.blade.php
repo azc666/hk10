@@ -13,7 +13,7 @@
 @endphp --}}
 
 {{-- ////////////////// Name Tag //////////////// --}}
-@if ($request->prod_name == "Name Tag")
+@if ($request->prod_name == "Name Badge")
     <div class="nt_background">
         @if (strlen($request->name) <= 15)
             <div class="nt_name">

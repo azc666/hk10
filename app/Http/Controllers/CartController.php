@@ -187,16 +187,16 @@ class CartController extends Controller
             if ($prod_layout == 'NTAG') {
                 switch ($request->qty) {
                     case '1':
-                        $bcfyi_qty = '1 Name Tag';
+                        $bcfyi_qty = '1 Name Badge';
                         break;
                     case '2':
-                        $bcfyi_qty = '2 Name Tags';
+                        $bcfyi_qty = '2 Name Badges';
                         break;
                     case '3':
-                        $bcfyi_qty = '3 Name Tags';
+                        $bcfyi_qty = '3 Name Badges';
                         break;
                     default:
-                        $bcfyi_qty = '1 Name Tag';
+                        $bcfyi_qty = '1 Name Badge';
                 }
             }
             if ($prod_layout == 'SBC' || $prod_layout == 'ABC' || $prod_layout == 'PBC' || $prod_layout == 'ADSBC' || $prod_layout == 'PDSBC') {

@@ -120,7 +120,7 @@ HK Order Portal Home
                         <br><br>
                         <div class="caption text-center">
                             <a href="{{ Auth::check() ? url('/nametag') : '#'}}">
-                                <h4>Name Tags</h4>
+                                <h4>Name Badges</h4>
                             </a>
                         </div>
                     </div>

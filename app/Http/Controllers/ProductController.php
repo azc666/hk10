@@ -402,7 +402,7 @@ $cartItem = array(
 
         /////////////////////  Name Tags ///////////////////////
 // dd($request->prod_name);
-        if ($request->prod_name == "Name Tag") {
+        if ($request->prod_name == "Name Badge") {
             $pdf = PDF::loadView('products.showEdit', $data, compact('product', 'request', 'numb', 'numbfax', 'numbcell', 'phone', 'HKName', 'imagePath', 'HKEmail', 'HKEmail2'), [
                 'mode'                 => '',
                 'format'               => array( 266, 130),
