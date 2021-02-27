@@ -475,12 +475,12 @@ class CartOrderController extends Controller
         }
         if ($prod_layout == 'NTAG') {
             \Mail::to('sheri.testa@hklaw.com')->send(new OrderConfirmEmail($cartOrderEmail));
-            // \Mail::to('Sonia.tsunis@hklaw.com')->send(new OrderConfirmEmail($cartOrderEmail));
-            // \Mail::to('Sarah.caramanica@hklaw.com')->send(new OrderConfirmEmail($cartOrderEmail));
+            \Mail::to('Sonia.tsunis@hklaw.com')->send(new OrderConfirmEmail($cartOrderEmail));
+            \Mail::to('Sarah.caramanica@hklaw.com')->send(new OrderConfirmEmail($cartOrderEmail));
         }
 
-        // \Mail::to('output@g-d.com')->send(new OrderProductionEmail($cartOrderProduction, $order));
-        // \Mail::to('output@g-d.com')->send(new OrderConfirmEmail($cartOrderEmail));
+        \Mail::to('output@g-d.com')->send(new OrderProductionEmail($cartOrderProduction, $order));
+        \Mail::to('output@g-d.com')->send(new OrderConfirmEmail($cartOrderEmail));
 
             // \Mail::to('austin@g-d.com')->send(new OrderProductionEmail($cartOrderProduction, $order));
             \Mail::to('tmann999@gmail.com')->send(new OrderProductionEmail($cartOrderProduction, $order));
