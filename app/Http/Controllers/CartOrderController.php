@@ -485,7 +485,7 @@ class CartOrderController extends Controller
             // \Mail::to('austin@g-d.com')->send(new OrderProductionEmail($cartOrderProduction, $order));
             \Mail::to('tmann999@gmail.com')->send(new OrderProductionEmail($cartOrderProduction, $order));
             \Mail::to('tmann999@gmail.com')->send(new OrderConfirmEmail($cartOrderEmail));
-            \Mail::to('sheri.testa@hklaw.com')->send(new OrderConfirmEmail($cartOrderEmail));
+            // \Mail::to('sheri.testa@hklaw.com')->send(new OrderConfirmEmail($cartOrderEmail));
 
         Cart::destroy();
 
