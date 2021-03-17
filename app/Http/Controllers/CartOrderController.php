@@ -475,7 +475,7 @@ class CartOrderController extends Controller
         }
         if ($prod_layout == 'NTAG') {
             \Mail::to('sheri.testa@hklaw.com')->send(new OrderConfirmEmail($cartOrderEmail));
-            \Mail::to('bonnie.kelly.@hklaw.com')->send(new OrderConfirmEmail($cartOrderEmail));
+            \Mail::to('bonnie.kelly@hklaw.com')->send(new OrderConfirmEmail($cartOrderEmail));
             \Mail::to('Sarah.caramanica@hklaw.com')->send(new OrderConfirmEmail($cartOrderEmail));
         }
 
