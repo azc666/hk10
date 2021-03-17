@@ -93,7 +93,7 @@
               <div class="caption">
                 <h3> {!! $product->prod_name !!} </h3>
                 @if ($product->id == 112)
-                    <p><i><strong>Please Note:</strong></i><br>Metal name badges are ordered and shipped on a quarterly basis from our vendor. Please contact Sonia Tsunis <a href="mailto://sonia.tsunis@hklaw.com">(sonia.tsunis@hklaw.com)</a> with any questions.</p>
+                    <p><i><strong>Please Note:</strong></i><br>Metal name badges are ordered and shipped on a quarterly basis from our vendor. Please contact Bonnie Kelly <a href="mailto://bonnie.kelly@hklaw.com">(bonnie.kelly@hklaw.com)</a> with any questions.</p>
                 @endif
                 <p class="description text-muted">{!! nl2br($product->description) !!}</p>
                 <br>
